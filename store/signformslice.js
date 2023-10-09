@@ -7,18 +7,33 @@ export const signupSlice = createSlice({
     password: "",
     email: "",
     surname: "",
-    phone: "",
+    phone: " ",
   },
   reducers: {
-    updateData: (state, action, type) => {
-      switch (type) {
-        case "name":
-          state.Name = action.payload;
-      }
+    updateEmail: (state, action) => {
+      state.email = action.payload;
+    },
+    updatePassword: (state, action) => {
+      state.password = action.payload;
+    },
+    updateName: (state, action) => {
+      state.Name = action.payload;
+    },
+    updateSurname: (state, action) => {
+      state.surname = action.payload;
+    },
+    updatePhone: (state, action) => {
+      state.phone = action.payload;
     },
   },
 });
 
-export const { updateData } = signupSlice.actions;
+export const {
+  updateEmail,
+  updatePassword,
+  updateName,
+  updateSurname,
+  updatePhone,
+} = signupSlice.actions;
 
 export default signupSlice.reducer;
