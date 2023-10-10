@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Globals";
 import { useSelector } from "react-redux";
@@ -18,7 +18,7 @@ export default function TripScreen() {
   const nav = useNavigation();
   const { from, to } = useSelector((state) => state.trip);
   const FILTERED_DRIVERS = DRIVERS.filter((driver) => {
-    driver.from === from && driver.to === to;
+    driver.from === from;
   });
 
   const goBackHandler = () => {
@@ -27,6 +27,7 @@ export default function TripScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      {console.log(FILTERED_DRIVERS)}
       <View style={styles.topArea}>
         <View /*go back button wrapper */>
           <Pressable onPress={goBackHandler}>
@@ -35,13 +36,28 @@ export default function TripScreen() {
         </View>
         <View style={styles.tripInfo}>
           <Text style={styles.tripText}>
-            Ride from <Text style={styles.tripInnerText}>{from}</Text> to{" "}
+            Ride from <Text style={styles.tripInnerText}>{from}</Text> to
             <Text style={styles.tripInnerText}>{to}</Text>
           </Text>
         </View>
       </View>
       <View style={styles.trips}>
-        <FlatList data={FILTERED_DRIVERS} renderItem={<Trip />} />
+        <FlatList
+          data={FILTERED_DRIVERS}
+          renderItem={(itemData) => (
+            <Trip
+              start={itemData.item.start}
+              end={itemData.item.end}
+              from={itemData.item.from}
+              to={itemData.item.to}
+              name={itemData.item.name}
+              surname={itemData.item.surname}
+              photo={itemData.item.photo}
+              price={itemData.item.price}
+              stars={itemData.item.stars}
+            />
+          )}
+        />
       </View>
     </SafeAreaView>
   );

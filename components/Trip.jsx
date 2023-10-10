@@ -1,7 +1,19 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Colors } from "../constants/Globals";
 
-export default function Trip({ theme, start, end }) {
+export default function Trip({
+  theme,
+  start,
+  end,
+  from,
+  to,
+  name,
+  surname,
+  stars,
+  photo,
+  price,
+}) {
   return (
     <Pressable>
       <View>
@@ -22,15 +34,15 @@ export default function Trip({ theme, start, end }) {
           <View>
             <View>
               <Text>FROM</Text>
-              <Text>Dusseldorf</Text>
+              <Text>{from}</Text>
             </View>
             <View>
               <Text>To</Text>
-              <Text>Blabla</Text>
+              <Text>{to}</Text>
             </View>
           </View>
           <View>
-            <Text>Price</Text>
+            <Text>{price}</Text>
           </View>
         </View>
       </View>
@@ -40,7 +52,9 @@ export default function Trip({ theme, start, end }) {
             uri: "https://images.pexels.com/photos/2589650/pexels-photo-2589650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
           }}
         />
-        <Text>Mark</Text>
+        <Text>
+          {name} {surname}
+        </Text>
       </View>
     </Pressable>
   );

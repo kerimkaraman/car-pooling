@@ -12,7 +12,7 @@ import RNPickerSelect from "react-native-picker-select";
 import { Entypo } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import Checkbox from "expo-checkbox";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import {
   updateDate,
@@ -32,7 +32,10 @@ export default function Homepage() {
   const dispatch = useDispatch();
   const nav = useNavigation();
 
+  const { from } = useSelector((state) => state.trip);
+
   const pressHandler = () => {
+    console.log(from);
     nav.navigate("Trip");
   };
 
@@ -60,7 +63,6 @@ export default function Homepage() {
                     { label: "Brussels", value: "Brussels" },
                     { label: "Paris", value: "Paris" },
                     { label: "Dusseldorf", value: "Dusseldorf" },
-                    { label: "", value: "" },
                   ]}
                   onValueChange={(e) => dispatch(updateFrom(e))}
                 />
@@ -73,7 +75,6 @@ export default function Homepage() {
                     { label: "Brussels", value: "Brussels" },
                     { label: "Paris", value: "Paris" },
                     { label: "Dusseldorf", value: "Dusseldorf" },
-                    { label: "", value: "" },
                   ]}
                   onValueChange={(e) => dispatch(updateTo(e))}
                 />

@@ -5,6 +5,8 @@ export const DRIVERS = [
     surname: "Ohne",
     from: "Dusseldorf",
     to: "Gent",
+    start: "11.00",
+    end: "13.00",
     price: 39.99,
     stars: 4,
     photo:
@@ -17,6 +19,8 @@ export const DRIVERS = [
     from: "London",
     to: "Liverpool",
     price: 19.99,
+    start: "14.00",
+    end: "15.40",
     stars: 5,
     photo:
       "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -27,6 +31,8 @@ export const DRIVERS = [
     surname: "Down",
     from: "Paris",
     to: "Lyonnais",
+    start: "09.00",
+    end: "11.20",
     price: 59.99,
     stars: 3,
     photo:
@@ -38,6 +44,8 @@ export const DRIVERS = [
     surname: "Roann",
     from: "Brussels",
     to: "Dusseldorf",
+    start: "18.00",
+    end: "21.00",
     price: 59.99,
     stars: 5,
     photo:
@@ -49,6 +57,8 @@ export const DRIVERS = [
     surname: "Cabaye",
     from: "Montpellier",
     to: "Dusseldorf",
+    start: "17.00",
+    end: "18.30",
     price: 109.99,
     stars: 2,
     photo:
@@ -82,6 +92,8 @@ export const DRIVERS = [
     surname: "Ryan",
     from: "Liverpool",
     to: "London",
+    start: "01.00",
+    end: "02.00",
     price: 39,
     stars: 5,
     photo:
@@ -93,6 +105,8 @@ export const DRIVERS = [
     surname: "Prink",
     from: "Lyonnais",
     to: "Paris",
+    start: "11.00",
+    end: "13.00",
     price: 39,
     stars: 4,
     photo:
@@ -104,6 +118,8 @@ export const DRIVERS = [
     surname: "Mueller",
     from: "Dusseldorf",
     to: "Brussels",
+    start: "15.00",
+    end: "16.10",
     price: 59.99,
     stars: 1,
     photo:
@@ -115,6 +131,8 @@ export const DRIVERS = [
     surname: "Kim",
     from: "Dusseldorf",
     to: "Montpellier",
+    start: "11.00",
+    end: "15.00",
     price: 39,
     stars: 4,
     photo:
@@ -126,6 +144,8 @@ export const DRIVERS = [
     surname: "Pavar",
     from: "Dusseldorf",
     to: "Gent",
+    start: "19.00",
+    end: "20.45",
     price: 39,
     stars: 4,
     photo:
