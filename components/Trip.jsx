@@ -3,7 +3,7 @@ import React from "react";
 import { Colors } from "../constants/Globals";
 
 export default function Trip({
-  theme,
+  id,
   start,
   end,
   from,
@@ -15,11 +15,11 @@ export default function Trip({
   price,
 }) {
   return (
-    <Pressable>
-      <View>
-        <View>
-          <Text>{start}</Text>
-          <Text>{end}</Text>
+    <Pressable style={styles.container}>
+      <View style={styles.topContainer}>
+        <View style={styles.hoursArea}>
+          <Text style={styles.hoursText}>{start}</Text>
+          <Text style={styles.hoursText}>{end}</Text>
         </View>
         <View style={styles.iconContainer}>
           <View style={styles.iconTop}>
@@ -31,43 +31,72 @@ export default function Trip({
           </View>
         </View>
         <View style={styles.tripInfo}>
-          <View>
-            <View>
-              <Text>FROM</Text>
-              <Text>{from}</Text>
+          <View style={styles.tripContainer}>
+            <View style={styles.tripItem}>
+              <Text style={styles.tripHeader}>From</Text>
+              <Text style={styles.tripText}>{from}</Text>
             </View>
-            <View>
-              <Text>To</Text>
-              <Text>{to}</Text>
+            <View style={styles.tripItem}>
+              <Text style={styles.tripHeader}>To</Text>
+              <Text style={styles.tripText}>{to}</Text>
             </View>
           </View>
           <View>
-            <Text>{price}</Text>
+            <Text style={styles.priceText}>{price} €</Text>
           </View>
         </View>
       </View>
-      <View>
-        <Image
-          source={{
-            uri: "https://images.pexels.com/photos/2589650/pexels-photo-2589650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-          }}
-        />
-        <Text>
-          {name} {surname}
-        </Text>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View style={styles.personCard}>
+          <Image
+            style={styles.image}
+            source={{
+              uri: photo,
+            }}
+          />
+          <Text style={styles.personText}>
+            {name} {surname}
+          </Text>
+        </View>
       </View>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    gap: 30,
+    paddingHorizontal: 20,
+    paddingVertical: 30,
+    backgroundColor: "white",
+    marginVertical: 40,
+    borderRadius: 20,
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
+  },
+  topContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 30,
+    justifyContent: "center",
+  },
+  hoursArea: {
+    gap: 70,
+  },
+  hoursText: {
+    fontSize: 18,
+    fontWeight: "600",
+    color: Colors.lightgrey,
+  },
   iconContainer: {
     justifyContent: "center",
     alignItems: "center",
     gap: 0,
   },
   iconTop: {
-    backgroundColor: "white",
+    backgroundColor: Colors.lightgrey,
     width: 15,
     height: 15,
     justifyContent: "center",
@@ -75,7 +104,7 @@ const styles = StyleSheet.create({
     borderRadius: 300,
   },
   iconTopInner: {
-    backgroundColor: Colors.lightblue,
+    backgroundColor: "white",
     width: 7,
     height: 7,
     borderRadius: 300,
@@ -83,10 +112,10 @@ const styles = StyleSheet.create({
   iconBar: {
     width: 1,
     height: 100,
-    backgroundColor: "white",
+    backgroundColor: Colors.lightgrey,
   },
   iconBottom: {
-    backgroundColor: Colors.verylightblue,
+    backgroundColor: Colors.lightgrey,
     width: 15,
     height: 15,
     borderRadius: 300,
@@ -97,6 +126,46 @@ const styles = StyleSheet.create({
     width: 7,
     height: 7,
     borderRadius: 300,
-    backgroundColor: "white",
+    backgroundColor: Colors.grey,
+  },
+  tripHeader: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: Colors.lightgrey,
+  },
+  tripItem: {
+    gap: 10,
+  },
+  tripText: {
+    color: Colors.grey,
+  },
+  tripInfo: {
+    flexDirection: "row",
+    gap: 20,
+  },
+  tripContainer: {
+    gap: 30,
+  },
+  image: {
+    width: 50,
+    height: 50,
+    objectFit: "cover",
+    borderRadius: "50%",
+  },
+  priceText: {
+    color: Colors.grey,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  personCard: {
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+  },
+  personText: {
+    color: Colors.lightgrey,
+    fontSize: 18,
+    fontWeight: "600",
   },
 });

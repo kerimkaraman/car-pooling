@@ -70,6 +70,8 @@ export const DRIVERS = [
     surname: "Crax",
     from: "Brussels",
     to: "Dusseldorf",
+    start: "13.40",
+    end: "15.40",
     price: 49.99,
     stars: 5,
     photo:
@@ -80,6 +82,8 @@ export const DRIVERS = [
     name: "Mario",
     surname: "Mueller",
     from: "Gent",
+    start: "16.50",
+    end: "20.00",
     to: "Dusseldorf",
     price: 39,
     stars: 4,

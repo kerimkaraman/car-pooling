@@ -11,23 +11,22 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Globals";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
-import { DRIVERS } from "../data/drivers";
 import Trip from "../components/Trip";
+import { DRIVERS } from "../data/drivers";
 
-export default function TripScreen() {
-  const nav = useNavigation();
+export default function TripScreen({ route }) {
   const { from, to } = useSelector((state) => state.trip);
-  const FILTERED_DRIVERS = DRIVERS.filter((driver) => {
-    driver.from === from;
-  });
+  const nav = useNavigation();
 
   const goBackHandler = () => {
     nav.goBack();
   };
 
+  const { filtered } = route.params;
+
   return (
     <SafeAreaView style={styles.container}>
-      {console.log(FILTERED_DRIVERS)}
+      {filtered.map((driver) => console.log(driver))}
       <View style={styles.topArea}>
         <View /*go back button wrapper */>
           <Pressable onPress={goBackHandler}>
@@ -37,27 +36,36 @@ export default function TripScreen() {
         <View style={styles.tripInfo}>
           <Text style={styles.tripText}>
             Ride from <Text style={styles.tripInnerText}>{from}</Text> to
-            <Text style={styles.tripInnerText}>{to}</Text>
+            <Text style={styles.tripInnerText}> {to}</Text>
           </Text>
         </View>
       </View>
       <View style={styles.trips}>
-        <FlatList
-          data={FILTERED_DRIVERS}
-          renderItem={(itemData) => (
-            <Trip
-              start={itemData.item.start}
-              end={itemData.item.end}
-              from={itemData.item.from}
-              to={itemData.item.to}
-              name={itemData.item.name}
-              surname={itemData.item.surname}
-              photo={itemData.item.photo}
-              price={itemData.item.price}
-              stars={itemData.item.stars}
-            />
-          )}
-        />
+        {filtered.length <= 0 ? (
+          <Text style={styles.errorText}>
+            A trip from {from} to {to} have not found.
+          </Text>
+        ) : (
+          <FlatList
+            contentContainerStyle={{ paddingBottom: 20 }}
+            keyExtractor={(itemData) => itemData.id}
+            data={filtered}
+            renderItem={(itemData) => (
+              <Trip
+                id={itemData.item.id}
+                start={itemData.item.start}
+                end={itemData.item.end}
+                from={itemData.item.from}
+                to={itemData.item.to}
+                name={itemData.item.name}
+                surname={itemData.item.surname}
+                photo={itemData.item.photo}
+                price={itemData.item.price}
+                stars={itemData.item.stars}
+              />
+            )}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
@@ -66,6 +74,7 @@ export default function TripScreen() {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
+    flex: 1,
   },
   topArea: {
     backgroundColor: Colors.lightblue,
@@ -84,5 +93,18 @@ const styles = StyleSheet.create({
   },
   tripInnerText: {
     color: Colors.verylightblue,
+  },
+  errorText: {
+    textAlign: "center",
+    color: Colors.grey,
+    fontWeight: "bold",
+    fontSize: 24,
+    marginTop: 40,
+  },
+  tripList: {
+    marginBottom: 20,
+  },
+  trips: {
+    flex: 1,
   },
 });

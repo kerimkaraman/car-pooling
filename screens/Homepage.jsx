@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Colors } from "../constants/Globals";
 import RNPickerSelect from "react-native-picker-select";
 import { Entypo } from "@expo/vector-icons";
@@ -20,6 +20,7 @@ import {
   updatePassenger,
   updateTo,
 } from "../store/tripslice";
+import { DRIVERS } from "../data/drivers";
 
 export default function Homepage() {
   const [date, setDate] = useState(new Date());
@@ -32,11 +33,13 @@ export default function Homepage() {
   const dispatch = useDispatch();
   const nav = useNavigation();
 
-  const { from } = useSelector((state) => state.trip);
-
+  const { from, to } = useSelector((state) => state.trip);
   const pressHandler = () => {
+    const filtered = DRIVERS.filter(
+      (driver) => driver.from == from && driver.to == to
+    );
+    nav.navigate("Trip", { filtered: filtered });
     console.log(from);
-    nav.navigate("Trip");
   };
 
   return (
@@ -55,26 +58,35 @@ export default function Homepage() {
           </View>
           <View style={styles.tripContainer}>
             <View style={{ gap: 20 }}>
-              <View>
+              <View style={styles.pickerContainer}>
                 <Text style={styles.informationText}>From</Text>
                 <RNPickerSelect
-                  style={{ color: "white" }}
                   items={[
                     { label: "Brussels", value: "Brussels" },
                     { label: "Paris", value: "Paris" },
                     { label: "Dusseldorf", value: "Dusseldorf" },
+                    { label: "London", value: "London" },
+                    { label: "Liverpool", value: "Liverpool" },
+                    { label: "Montpellier", value: "Montpellier" },
+                    { label: "Gent", value: "Gent" },
+                    { label: "Lyonnais", value: "Lyonnais" },
                   ]}
                   onValueChange={(e) => dispatch(updateFrom(e))}
                 />
               </View>
               <View style={styles.whiteline}></View>
-              <View>
+              <View style={styles.pickerContainer}>
                 <Text style={styles.informationText}>To</Text>
                 <RNPickerSelect
                   items={[
                     { label: "Brussels", value: "Brussels" },
                     { label: "Paris", value: "Paris" },
                     { label: "Dusseldorf", value: "Dusseldorf" },
+                    { label: "London", value: "London" },
+                    { label: "Liverpool", value: "Liverpool" },
+                    { label: "Montpellier", value: "Montpellier" },
+                    { label: "Gent", value: "Gent" },
+                    { label: "Lyonnais", value: "Lyonnais" },
                   ]}
                   onValueChange={(e) => dispatch(updateTo(e))}
                 />
@@ -307,5 +319,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
     fontWeight: "bold",
+  },
+  pickerContainer: {
+    gap: 10,
   },
 });
