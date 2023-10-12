@@ -10,6 +10,7 @@ export const DRIVERS = [
     car: "Toyota Corolla",
     price: 39.99,
     stars: 4,
+    review: 598,
     photo:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -24,6 +25,7 @@ export const DRIVERS = [
     end: "15.40",
     car: "BMW x5",
     stars: 5,
+    review: 435,
     photo:
       "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -38,6 +40,7 @@ export const DRIVERS = [
     car: "Nissan Qashqai",
     price: 59.99,
     stars: 3,
+    review: 198,
     photo:
       "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -52,6 +55,7 @@ export const DRIVERS = [
     car: "Seat Leon",
     price: 59.99,
     stars: 5,
+    review: 10,
     photo:
       "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -66,6 +70,7 @@ export const DRIVERS = [
     car: "Fiat 200L",
     price: 109.99,
     stars: 2,
+    review: 33,
     photo:
       "https://images.pexels.com/photos/1080213/pexels-photo-1080213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -80,6 +85,7 @@ export const DRIVERS = [
     car: "Honda Civic",
     price: 49.99,
     stars: 5,
+    review: 809,
     photo:
       "https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -94,6 +100,7 @@ export const DRIVERS = [
     car: "Ford Mondeo",
     price: 39,
     stars: 4,
+    review: 77,
     photo:
       "https://images.pexels.com/photos/343717/pexels-photo-343717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -108,6 +115,7 @@ export const DRIVERS = [
     car: "Ford Mustang",
     price: 39,
     stars: 5,
+    review: 59,
     photo:
       "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -122,6 +130,7 @@ export const DRIVERS = [
     car: "Audi A4",
     price: 39,
     stars: 4,
+    review: 256,
     photo:
       "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -136,6 +145,7 @@ export const DRIVERS = [
     car: "Mercedes CLA180",
     price: 59.99,
     stars: 1,
+    review: 10,
     photo:
       "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -150,6 +160,7 @@ export const DRIVERS = [
     car: "Renault Megane 2",
     price: 39,
     stars: 4,
+    review: 408,
     photo:
       "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -164,6 +175,7 @@ export const DRIVERS = [
     car: "Renault Clio",
     price: 39,
     stars: 4,
+    review: 672,
     photo:
       "https://images.pexels.com/photos/2589650/pexels-photo-2589650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },

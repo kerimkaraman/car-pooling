@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import Homepage from "./screens/Homepage";
 import TripScreen from "./screens/TripScreen";
+import CarBooking from "./screens/CarBooking";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
           <Stack.Screen name="SignupScreen" component={SignupScreen} />
           <Stack.Screen name="HomePage" component={Homepage} />
           <Stack.Screen name="Trip" component={TripScreen} />
+          <Stack.Screen name="CarBooking" component={CarBooking} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Colors } from "../constants/Globals";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Trip({
   id,
@@ -14,11 +15,31 @@ export default function Trip({
   photo,
   price,
   car,
+  review,
 }) {
   /* from - to - start - end - name - surname - price - photo */
   /* carbooking  -> eklenecekler: araba -  belki drop off pick up*/
+
+  const nav = useNavigation();
+
+  const handleOnCardPress = () => {
+    nav.navigate("CarBooking", {
+      from: from,
+      to: to,
+      start: start,
+      end: end,
+      name: name,
+      surname: surname,
+      price: price,
+      photo: photo,
+      car: car,
+      review: review,
+      stars: stars,
+    });
+  };
+
   return (
-    <Pressable style={styles.container}>
+    <Pressable onPress={handleOnCardPress} style={styles.container}>
       <View style={styles.topContainer}>
         <View style={styles.hoursArea}>
           <Text style={styles.hoursText}>{start}</Text>

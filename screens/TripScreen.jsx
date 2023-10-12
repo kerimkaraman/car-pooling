@@ -6,13 +6,12 @@ import {
   Text,
   View,
 } from "react-native";
-import React, { useEffect, useLayoutEffect } from "react";
+
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Globals";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Trip from "../components/Trip";
-import { DRIVERS } from "../data/drivers";
 
 export default function TripScreen({ route }) {
   const { from, to } = useSelector((state) => state.trip);
@@ -60,6 +59,7 @@ export default function TripScreen({ route }) {
                 name={itemData.item.name}
                 surname={itemData.item.surname}
                 car={itemData.item.car}
+                review={itemData.item.review}
                 photo={itemData.item.photo}
                 price={itemData.item.price}
                 stars={itemData.item.stars}
