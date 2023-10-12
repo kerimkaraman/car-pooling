@@ -2,6 +2,7 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -44,130 +45,149 @@ export default function Homepage() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.topContainer}>
-        <Text style={styles.topHeader}>Where are you going?</Text>
-        <View style={styles.tripContainer}>
-          <View style={styles.iconContainer}>
-            <View style={styles.iconTop}>
-              <View style={styles.iconTopInner}></View>
-            </View>
-            <View style={styles.iconBar}></View>
-            <View style={styles.iconBottom}>
-              <View style={styles.iconBottomInner}></View>
-            </View>
-          </View>
+      <ScrollView>
+        <View style={styles.topContainer}>
+          <Text style={styles.topHeader}>Where are you going?</Text>
           <View style={styles.tripContainer}>
-            <View style={{ gap: 20 }}>
-              <View style={styles.pickerContainer}>
-                <Text style={styles.informationText}>From</Text>
-                <RNPickerSelect
-                  items={[
-                    { label: "Brussels", value: "Brussels" },
-                    { label: "Paris", value: "Paris" },
-                    { label: "Dusseldorf", value: "Dusseldorf" },
-                    { label: "London", value: "London" },
-                    { label: "Liverpool", value: "Liverpool" },
-                    { label: "Montpellier", value: "Montpellier" },
-                    { label: "Gent", value: "Gent" },
-                    { label: "Lyonnais", value: "Lyonnais" },
-                  ]}
-                  onValueChange={(e) => dispatch(updateFrom(e))}
-                />
+            <View style={styles.iconContainer}>
+              <View style={styles.iconTop}>
+                <View style={styles.iconTopInner}></View>
               </View>
-              <View style={styles.whiteline}></View>
-              <View style={styles.pickerContainer}>
-                <Text style={styles.informationText}>To</Text>
-                <RNPickerSelect
-                  items={[
-                    { label: "Brussels", value: "Brussels" },
-                    { label: "Paris", value: "Paris" },
-                    { label: "Dusseldorf", value: "Dusseldorf" },
-                    { label: "London", value: "London" },
-                    { label: "Liverpool", value: "Liverpool" },
-                    { label: "Montpellier", value: "Montpellier" },
-                    { label: "Gent", value: "Gent" },
-                    { label: "Lyonnais", value: "Lyonnais" },
-                  ]}
-                  onValueChange={(e) => dispatch(updateTo(e))}
-                />
+              <View style={styles.iconBar}></View>
+              <View style={styles.iconBottom}>
+                <View style={styles.iconBottomInner}></View>
               </View>
             </View>
-            <Pressable style={styles.button}>
-              <Entypo name="shuffle" size={24} color={Colors.lightgrey} />
-            </Pressable>
+            <View style={styles.tripContainer}>
+              <View style={{ gap: 20 }}>
+                <View style={styles.pickerContainer}>
+                  <Text style={styles.informationText}>From</Text>
+                  <RNPickerSelect
+                    style={{
+                      ...picker,
+                      placeholder: { color: Colors.lightgrey },
+                    }}
+                    placeholder={{
+                      label: "Please select a city",
+                      value: null,
+                    }}
+                    items={[
+                      { label: "Brussels", value: "Brussels" },
+                      { label: "Paris", value: "Paris" },
+                      { label: "Dusseldorf", value: "Dusseldorf" },
+                      { label: "London", value: "London" },
+                      { label: "Liverpool", value: "Liverpool" },
+                      { label: "Montpellier", value: "Montpellier" },
+                      { label: "Gent", value: "Gent" },
+                      { label: "Lyonnais", value: "Lyonnais" },
+                    ]}
+                    onValueChange={(e) => dispatch(updateFrom(e))}
+                  />
+                </View>
+                <View style={styles.whiteline}></View>
+                <View style={styles.pickerContainer}>
+                  <Text style={styles.informationText}>To</Text>
+                  <RNPickerSelect
+                    style={{
+                      ...picker,
+                      placeholder: { color: Colors.lightgrey },
+                    }}
+                    placeholderTextColor="red"
+                    placeholder={{
+                      label: "Please select a city",
+                      value: null,
+                    }}
+                    items={[
+                      { label: "Brussels", value: "Brussels" },
+                      { label: "Paris", value: "Paris" },
+                      { label: "Dusseldorf", value: "Dusseldorf" },
+                      { label: "London", value: "London" },
+                      { label: "Liverpool", value: "Liverpool" },
+                      { label: "Montpellier", value: "Montpellier" },
+                      { label: "Gent", value: "Gent" },
+                      { label: "Lyonnais", value: "Lyonnais" },
+                    ]}
+                    onValueChange={(e) => dispatch(updateTo(e))}
+                  />
+                </View>
+              </View>
+              <Pressable style={styles.button}>
+                <Entypo name="shuffle" size={24} color={Colors.lightgrey} />
+              </Pressable>
+            </View>
           </View>
         </View>
-      </View>
-      <View style={styles.dateArea}>
-        <Text style={styles.dateHeader}>Date</Text>
+        <View style={styles.dateArea}>
+          <Text style={styles.dateHeader}>Date</Text>
+          <View style={{ alignItems: "center" }}>
+            <DateTimePicker
+              value={date}
+              onChange={(e) => updateDate(e.timeStamp)}
+              display="default"
+            />
+          </View>
+        </View>
+        <View style={styles.passengerArea}>
+          <Text style={styles.passengerHeader}>Passenger</Text>
+          <View style={styles.checkboxArea}>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                style={styles.checkbox}
+                value={checkbox1}
+                onChange={() => dispatch(updatePassenger(1))}
+                onValueChange={setCheckbox1}
+                color={checkbox1 ? Colors.lightblue : undefined}
+              />
+              <Text style={styles.checkboxText}>1</Text>
+            </View>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                style={styles.checkbox}
+                value={checkbox2}
+                onChange={() => dispatch(updatePassenger(2))}
+                onValueChange={setCheckbox2}
+                color={checkbox2 ? Colors.lightblue : undefined}
+              />
+              <Text style={styles.checkboxText}>2</Text>
+            </View>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                style={styles.checkbox}
+                value={checkbox3}
+                onChange={() => dispatch(updatePassenger(3))}
+                onValueChange={setCheckbox3}
+                color={checkbox3 ? Colors.lightblue : undefined}
+              />
+              <Text style={styles.checkboxText}>3</Text>
+            </View>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                style={styles.checkbox}
+                value={checkbox4}
+                onChange={() => dispatch(updatePassenger(4))}
+                onValueChange={setCheckbox4}
+                color={checkbox4 ? Colors.lightblue : undefined}
+              />
+              <Text style={styles.checkboxText}>4</Text>
+            </View>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                style={styles.checkbox}
+                value={checkbox5}
+                onChange={() => dispatch(updatePassenger(5))}
+                onValueChange={setCheckbox5}
+                color={checkbox5 ? Colors.lightblue : undefined}
+              />
+              <Text style={styles.checkboxText}>5</Text>
+            </View>
+          </View>
+        </View>
         <View style={{ alignItems: "center" }}>
-          <DateTimePicker
-            value={date}
-            onChange={(e) => updateDate(e.timeStamp)}
-            display="default"
-          />
+          <Pressable onPress={pressHandler} style={styles.searchButton}>
+            <Text style={styles.searchText}>Search</Text>
+          </Pressable>
         </View>
-      </View>
-      <View style={styles.passengerArea}>
-        <Text style={styles.passengerHeader}>Passenger</Text>
-        <View style={styles.checkboxArea}>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              style={styles.checkbox}
-              value={checkbox1}
-              onChange={() => dispatch(updatePassenger(1))}
-              onValueChange={setCheckbox1}
-              color={checkbox1 ? Colors.lightblue : undefined}
-            />
-            <Text style={styles.checkboxText}>1</Text>
-          </View>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              style={styles.checkbox}
-              value={checkbox2}
-              onChange={() => dispatch(updatePassenger(2))}
-              onValueChange={setCheckbox2}
-              color={checkbox2 ? Colors.lightblue : undefined}
-            />
-            <Text style={styles.checkboxText}>2</Text>
-          </View>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              style={styles.checkbox}
-              value={checkbox3}
-              onChange={() => dispatch(updatePassenger(3))}
-              onValueChange={setCheckbox3}
-              color={checkbox3 ? Colors.lightblue : undefined}
-            />
-            <Text style={styles.checkboxText}>3</Text>
-          </View>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              style={styles.checkbox}
-              value={checkbox4}
-              onChange={() => dispatch(updatePassenger(4))}
-              onValueChange={setCheckbox4}
-              color={checkbox4 ? Colors.lightblue : undefined}
-            />
-            <Text style={styles.checkboxText}>4</Text>
-          </View>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              style={styles.checkbox}
-              value={checkbox5}
-              onChange={() => dispatch(updatePassenger(5))}
-              onValueChange={setCheckbox5}
-              color={checkbox5 ? Colors.lightblue : undefined}
-            />
-            <Text style={styles.checkboxText}>5</Text>
-          </View>
-        </View>
-      </View>
-      <View style={{ alignItems: "center" }}>
-        <Pressable onPress={pressHandler} style={styles.searchButton}>
-          <Text style={styles.searchText}>Search</Text>
-        </Pressable>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -217,7 +237,7 @@ const styles = StyleSheet.create({
   },
   iconBar: {
     width: 1,
-    height: 100,
+    height: 150,
     backgroundColor: "white",
   },
   iconBottom: {
@@ -235,8 +255,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   informationText: {
-    color: Colors.lightgrey,
-    fontSize: 20,
+    color: Colors.grey,
+    fontSize: 24,
+    fontWeight: "bold",
   },
   whiteline: {
     height: 2,
@@ -321,5 +342,13 @@ const styles = StyleSheet.create({
   },
   pickerContainer: {
     gap: 10,
+  },
+});
+
+const picker = StyleSheet.create({
+  inputIOS: {
+    fontSize: 18,
+    color: "white",
+    fontWeight: "bold",
   },
 });
