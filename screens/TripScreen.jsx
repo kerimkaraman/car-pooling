@@ -59,6 +59,7 @@ export default function TripScreen({ route }) {
                 to={itemData.item.to}
                 name={itemData.item.name}
                 surname={itemData.item.surname}
+                car={itemData.item.car}
                 photo={itemData.item.photo}
                 price={itemData.item.price}
                 stars={itemData.item.stars}

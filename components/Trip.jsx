@@ -13,7 +13,10 @@ export default function Trip({
   stars,
   photo,
   price,
+  car,
 }) {
+  /* from - to - start - end - name - surname - price - photo */
+  /* carbooking  -> eklenecekler: araba -  belki drop off pick up*/
   return (
     <Pressable style={styles.container}>
       <View style={styles.topContainer}>

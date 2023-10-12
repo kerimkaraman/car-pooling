@@ -7,6 +7,7 @@ export const DRIVERS = [
     to: "Gent",
     start: "11.00",
     end: "13.00",
+    car: "Toyota Corolla",
     price: 39.99,
     stars: 4,
     photo:
@@ -21,6 +22,7 @@ export const DRIVERS = [
     price: 19.99,
     start: "14.00",
     end: "15.40",
+    car: "BMW x5",
     stars: 5,
     photo:
       "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -33,6 +35,7 @@ export const DRIVERS = [
     to: "Lyonnais",
     start: "09.00",
     end: "11.20",
+    car: "Nissan Qashqai",
     price: 59.99,
     stars: 3,
     photo:
@@ -46,6 +49,7 @@ export const DRIVERS = [
     to: "Dusseldorf",
     start: "18.00",
     end: "21.00",
+    car: "Seat Leon",
     price: 59.99,
     stars: 5,
     photo:
@@ -59,6 +63,7 @@ export const DRIVERS = [
     to: "Dusseldorf",
     start: "17.00",
     end: "18.30",
+    car: "Fiat 200L",
     price: 109.99,
     stars: 2,
     photo:
@@ -72,6 +77,7 @@ export const DRIVERS = [
     to: "Dusseldorf",
     start: "13.40",
     end: "15.40",
+    car: "Honda Civic",
     price: 49.99,
     stars: 5,
     photo:
@@ -85,6 +91,7 @@ export const DRIVERS = [
     start: "16.50",
     end: "20.00",
     to: "Dusseldorf",
+    car: "Ford Mondeo",
     price: 39,
     stars: 4,
     photo:
@@ -98,6 +105,7 @@ export const DRIVERS = [
     to: "London",
     start: "01.00",
     end: "02.00",
+    car: "Ford Mustang",
     price: 39,
     stars: 5,
     photo:
@@ -111,6 +119,7 @@ export const DRIVERS = [
     to: "Paris",
     start: "11.00",
     end: "13.00",
+    car: "Audi A4",
     price: 39,
     stars: 4,
     photo:
@@ -124,6 +133,7 @@ export const DRIVERS = [
     to: "Brussels",
     start: "15.00",
     end: "16.10",
+    car: "Mercedes CLA180",
     price: 59.99,
     stars: 1,
     photo:
@@ -137,6 +147,7 @@ export const DRIVERS = [
     to: "Montpellier",
     start: "11.00",
     end: "15.00",
+    car: "Renault Megane 2",
     price: 39,
     stars: 4,
     photo:
@@ -150,6 +161,7 @@ export const DRIVERS = [
     to: "Gent",
     start: "19.00",
     end: "20.45",
+    car: "Renault Clio",
     price: 39,
     stars: 4,
     photo:
