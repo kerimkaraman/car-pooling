@@ -60,6 +60,7 @@ export default function TripScreen({ route }) {
                 surname={itemData.item.surname}
                 car={itemData.item.car}
                 review={itemData.item.review}
+                level={itemData.item.level}
                 photo={itemData.item.photo}
                 price={itemData.item.price}
                 stars={itemData.item.stars}
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lightblue,
     borderRadius: 20,
     padding: 40,
-    gap: 20,
+    gap: 30,
     alignItems: "flex-start",
   },
   tripInfo: {

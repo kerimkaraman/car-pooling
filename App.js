@@ -9,6 +9,8 @@ import { store } from "./store/store";
 import Homepage from "./screens/Homepage";
 import TripScreen from "./screens/TripScreen";
 import CarBooking from "./screens/CarBooking";
+import OrderConfirmation from "./screens/OrderConfirmation";
+import DriverProfile from "./screens/DriverProfile";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -25,6 +27,8 @@ export default function App() {
           <Stack.Screen name="HomePage" component={Homepage} />
           <Stack.Screen name="Trip" component={TripScreen} />
           <Stack.Screen name="CarBooking" component={CarBooking} />
+          <Stack.Screen name="Confirmation" component={OrderConfirmation} />
+          <Stack.Screen name="Driver" component={DriverProfile} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

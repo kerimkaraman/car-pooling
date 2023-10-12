@@ -11,6 +11,7 @@ export const DRIVERS = [
     price: 39.99,
     stars: 4,
     review: 598,
+    level: "Junior",
     photo:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -24,6 +25,7 @@ export const DRIVERS = [
     start: "14.00",
     end: "15.40",
     car: "BMW x5",
+    level: "Intermediate",
     stars: 5,
     review: 435,
     photo:
@@ -41,6 +43,7 @@ export const DRIVERS = [
     price: 59.99,
     stars: 3,
     review: 198,
+    level: "Pro",
     photo:
       "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -56,6 +59,7 @@ export const DRIVERS = [
     price: 59.99,
     stars: 5,
     review: 10,
+    level: "Pro",
     photo:
       "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -71,6 +75,7 @@ export const DRIVERS = [
     price: 109.99,
     stars: 2,
     review: 33,
+    level: "Intermediate",
     photo:
       "https://images.pexels.com/photos/1080213/pexels-photo-1080213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -86,6 +91,7 @@ export const DRIVERS = [
     price: 49.99,
     stars: 5,
     review: 809,
+    level: "Junior",
     photo:
       "https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -101,6 +107,7 @@ export const DRIVERS = [
     price: 39,
     stars: 4,
     review: 77,
+    level: "Intermediate",
     photo:
       "https://images.pexels.com/photos/343717/pexels-photo-343717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -116,6 +123,7 @@ export const DRIVERS = [
     price: 39,
     stars: 5,
     review: 59,
+    level: "Pro",
     photo:
       "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -131,6 +139,7 @@ export const DRIVERS = [
     price: 39,
     stars: 4,
     review: 256,
+    level: "Intermediate",
     photo:
       "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -146,6 +155,7 @@ export const DRIVERS = [
     price: 59.99,
     stars: 1,
     review: 10,
+    level: "Junior",
     photo:
       "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -161,6 +171,7 @@ export const DRIVERS = [
     price: 39,
     stars: 4,
     review: 408,
+    level: "Intermediate",
     photo:
       "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -176,6 +187,7 @@ export const DRIVERS = [
     price: 39,
     stars: 4,
     review: 672,
+    level: "Intermediate",
     photo:
       "https://images.pexels.com/photos/2589650/pexels-photo-2589650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },

@@ -35,7 +35,7 @@ export default function CarBooking({ route }) {
   };
 
   const handleOrder = () => {
-    nav.navigate("");
+    nav.navigate("Confirmation");
   };
 
   return (

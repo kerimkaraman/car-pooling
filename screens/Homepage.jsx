@@ -176,13 +176,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Platform.OS === "android" ? 30 : 0,
-    gap: 30,
+    gap: 40,
     marginHorizontal: 10,
   },
   topContainer: {
     backgroundColor: Colors.lightblue,
-    paddingVertical: 20,
-    paddingHorizontal: 40,
+    padding: 40,
     borderRadius: 20,
     gap: 30,
   },

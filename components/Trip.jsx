@@ -16,6 +16,7 @@ export default function Trip({
   price,
   car,
   review,
+  level,
 }) {
   /* from - to - start - end - name - surname - price - photo */
   /* carbooking  -> eklenecekler: araba -  belki drop off pick up*/
@@ -35,6 +36,18 @@ export default function Trip({
       car: car,
       review: review,
       stars: stars,
+    });
+  };
+
+  const handlePersonPress = () => {
+    nav.navigate("Driver", {
+      name: name,
+      surname: surname,
+      stars: stars,
+      review: review,
+      photo: photo,
+      level: level,
+      photo: photo,
     });
   };
 
@@ -71,7 +84,7 @@ export default function Trip({
         </View>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <View style={styles.personCard}>
+        <Pressable onPress={handlePersonPress} style={styles.personCard}>
           <Image
             style={styles.image}
             source={{
@@ -81,7 +94,7 @@ export default function Trip({
           <Text style={styles.personText}>
             {name} {surname}
           </Text>
-        </View>
+        </Pressable>
       </View>
     </Pressable>
   );
@@ -93,7 +106,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 30,
     backgroundColor: "white",
-    marginVertical: 40,
+    marginVertical: 10,
     borderRadius: 20,
     shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
@@ -185,6 +198,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     alignItems: "center",
+    borderColor: Colors.verylightgrey,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 20,
     gap: 20,
   },
   personText: {
