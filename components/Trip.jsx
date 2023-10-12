@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     objectFit: "cover",
-    borderRadius: "50%",
+    borderRadius: 999,
   },
   priceText: {
     color: Colors.grey,

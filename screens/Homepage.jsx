@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   checkbox: {
     width: 30,
     height: 30,
-    borderRadius: "50%",
+    borderRadius: 9999,
     borderColor: Colors.lightgrey,
     backgroundColor: Colors.verylightblue,
   },

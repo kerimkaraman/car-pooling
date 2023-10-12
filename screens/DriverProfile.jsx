@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 30,
     alignItems: "center",
-    borderRadius: "50%",
+    borderRadius: 999,
   },
   detailText: {
     color: "white",
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     objectFit: "cover",
-    borderRadius: "50%",
+    borderRadius: 999,
   },
   descriptionArea: {
     backgroundColor: "white",
