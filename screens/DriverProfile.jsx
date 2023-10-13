@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     padding: 40,
     flexDirection: "row",
     alignItems: "flex-start",
-    gap: 20,
+    gap: 50,
   },
   personSkillsArea: {
     backgroundColor: "white",
@@ -149,11 +149,11 @@ const styles = StyleSheet.create({
   },
   person: {
     alignItems: "center",
-    gap: 20,
+    gap: 10,
   },
   personName: {
     color: "white",
-    fontSize: 32,
+    fontSize: 18,
     fontWeight: "bold",
   },
   image: {
